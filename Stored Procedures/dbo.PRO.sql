@@ -6,5 +6,6 @@ CREATE PROCEDURE [dbo].[PRO]
 AS
 BEGIN
 SELECT * FROM dbo.Student;
+SELECT * FROM dbo.Grade;
 END
 GO
