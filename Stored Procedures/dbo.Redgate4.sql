@@ -1,0 +1,22 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[Redgate4]
+AS
+  BEGIN
+    DECLARE @Name AS VARCHAR(255);
+    DECLARE c CURSOR FOR SELECT * FROM dbo.TeacherBasicInformation
+     OPEN c;
+     FETCH NEXT FROM c INTO @Name;
+     WHILE @@FETCH_STATUS = 0
+	 BEGIN
+	 PRINT @Name;
+	 FETCH NEXT FROM c INTO @Name;
+     END;
+     CLOSE c;
+	 DEALLOCATE c;
+  END
+
+  EXEC dbo.Redgate4;
+GO
